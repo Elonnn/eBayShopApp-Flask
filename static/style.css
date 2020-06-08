@@ -1,0 +1,159 @@
+body {
+  color: black;
+  font-family: serif;
+  font-size: 130%;
+}
+
+#eBayShopping {
+  width: max-content;
+  margin: auto;
+  display: block;
+  /* border: 1px solid black; */
+  align-content: center;
+}
+
+#eBayShopping h1 {
+  position: relative;
+  top: -38px;
+  display: inline;
+  font: 3em serif;
+}
+
+#eBayShopping a {
+  text-decoration: none;
+}
+
+#searchBox {
+  margin: auto;
+  border: 2px solid black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 700px;
+  text-align: center;
+}
+
+input {
+  border-color: rgb(177, 173, 173);
+  /* box-shadow:  0 4px 8px 0 green; */
+}
+
+/* seems no effect. fix it later. */
+input[type=text]:focus {
+  border-color: lightblue;
+}
+
+select {
+  width: 25%;
+  text-align-last: center;
+}
+
+.button {
+  border-radius: 4px;
+  height: 30px;
+  border: none;
+  margin: 0px;
+}
+
+.button:hover {
+  background-color: rgb(13, 160, 13);
+  color: white;
+}
+
+
+.numberInputBox {
+  width: 5%;
+}
+
+
+/* does not work */
+.required::after {
+    color: red;
+    content: " *";
+    display: inline;
+}
+
+.redAsteroid {
+  color: red;
+}
+
+#results {
+  text-align: center;
+  width: max-content;
+  margin: auto;
+}
+
+.itemCard {
+  width: 850px;
+  height: auto;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+  
+  display: grid;
+  grid-template-columns: auto 500px;
+}
+
+.itemCard:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); 
+  /* two layers of shadow */
+  /* 1st para moving right */
+  /* 2nd para moving down */
+  /* 3rd para blur effect */
+  /* 4th para spread radius */
+}
+
+.itemCard .text {
+  position: relative;
+  display: inline-block;
+
+  text-align: left;
+  margin: 40px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  order: 2;
+  align-self: center;
+}
+
+.itemCard .text .close:before {
+  content: '\00274C';
+}
+
+.itemCard .text .close {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  cursor: pointer;
+}
+
+#redirectImg{
+  display: inline;
+  max-height: 20px;
+	vertical-align: 0%;
+  border: none;
+}
+
+#topRatedImg{
+  display: inline;
+  max-height: 40px;
+	vertical-align: middle;
+  border: none;
+}
+
+.itemCard .image {
+  border: 4px solid rgb(109, 107, 107);
+  max-height: 140px;
+  margin: 3%;
+
+  transition: transform .2s; /* Animation */
+
+  order: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.itemCard .image:hover {
+  transform: scale(1.9);
+}

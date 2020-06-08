@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Yilang Xu">
+  <meta name="description" content="CSCI571 homework 6">
+  <title>eBay Shopping</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/eBayShopping.js"></script>
+</head>
+
+<body>
+  <div id="eBayShopping">
+    <a href="https://www.eBay.com" target="_blank">
+      <img src="/static/img/eBayLogo.png" alt="eBayLogo.png"></img>
+    </a>
+    <h1>Shopping</h1>
+  </div>
+  <!-- <form onsubmit="return false;"> -->
+  <form>
+    <div id="searchBox">
+      <label>
+        <b>Key Words <span class="redAsteroid">*</span>: </b>
+        <input type="text" value="" required="required" name="inKeyWords">
+      </label>
+
+      <hr>
+      <b>Price Range: </b>
+      <label>
+        From
+        <input type="number" min="0" class="numberInputBox" name="lowerPriceLimit">
+      </label>
+      <label>
+        to
+        <input type="number" min="0" class="numberInputBox" name="upperPriceLimit">
+      </label>
+
+      <hr>
+      <b>Condition: </b>
+      <label>
+        <input type="checkbox" name="condition[]" value="1000">
+        New
+      </label>
+      <label>
+        <input type="checkbox" name="condition[]" value="3000">
+        Used
+      </label>
+      <label>
+        <input type="checkbox" name="condition[]" value="4000">
+        Very Good
+      </label>
+      <label>
+        <input type="checkbox" name="condition[]" value="5000">
+        Good
+      </label>
+      <label>
+        <input type="checkbox" name="condition[]" value="6000">
+        Acceptable
+      </label>
+
+      <hr>
+      <b>Seller: </b>
+      <label>
+        <input type="checkbox" id="returnAccepted">
+        Return Accepted
+      </label>
+
+      <hr>
+      <b>Shipping: </b>
+      <label>
+        <input type="checkbox" id="shippingFree">
+        Free
+      </label>
+      <label>
+        <input type="checkbox" id="shippingExpedited">
+        Expedited
+      </label>
+
+      <hr>
+      <label>
+        <b>Sort by: </b>
+        <select size="1" name="inSortBy" id="selectSortBy">
+          <option selected="selected" value="BestMatch">Best Match</option>
+          <option value="CurrentPriceHighest">Price: highest first</option>
+          <option value="PricePlusShippingHighest">Price + Shipping: highest first</option>
+          <option value="PricePlusShippingLowest">Price + Shipping: lowest first</option>
+        </select>
+      </label>
+
+      <hr>
+      <INPUT TYPE="reset" VALUE="Clear" class="button" onClick="document.getElementById('results').innerHTML = ''; document.getElementById('selectSortBy').selectedIndex = 0;">
+      <INPUT TYPE="submit" VALUE="Search" class="button" onClick="search(this.form); return false;"> 
+    </div>
+
+    <div id="results">
+    </div>
+
+</body>
+
+</html>
