@@ -80,8 +80,12 @@ function showSearchResults(jsonResString) {
   var html = "<h2>" + resultsNum + " Results found for <i>" + searchFilters["keywords"] + "</i></h2>"
   html += "<hr></hr>";
   html += simplifiedCardHtmls.slice(0, NUM_SHOW_LESS).join(" \n ");
-  html += "<div id='showMore'></div>"
-  html += '<button type="button" id="showButton" class="button" onclick="showMore()">Show More</button>'
+
+  if (siftedItems.length > NUM_SHOW_LESS) {
+    html += "<div id='showMore'></div>"
+    html += '<button type="button" id="showButton" class="button" onclick="showMore()">Show More</button>'
+  }
+
   document.getElementById("results").innerHTML = html;
 }
 
@@ -130,7 +134,7 @@ function makeReturnAccept(item) {
   if (item.isReturnAccepted)
     return "Seller <b>accepts</b> returns";
   else
-    return "Seller <b>does not accept returns</b>";
+    return "Seller <b>does not accept</b> returns";
 }
 
 function makeShippingInfo(item) {

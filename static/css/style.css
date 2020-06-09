@@ -130,9 +130,11 @@ select {
 
 #redirectImg{
   display: inline;
-  max-height: 20px;
+  max-height: 30px;
+  max-width: 30px;
 	vertical-align: 0%;
   border: none;
+  opacity: 0.5;
 }
 
 #topRatedImg{
@@ -155,5 +157,5 @@ select {
 }
 
 .itemCard .image:hover {
-  transform: scale(1.9);
+  transform: scale(2);
 }
